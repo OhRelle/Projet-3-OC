@@ -1,0 +1,638 @@
+/* ---------------------------------------- */
+/* ==            SUMMARY           		      */
+/*---------------------------------------- */
+
+/* L25		- 1 - Color codes				    */
+/* L43		- 2 - Définition Polices    */
+/* L59		- 3 - Éléments Principaux   */
+/* L71		- 4	- Class 				      	*/
+/* L160		- 5 - Header    				    */
+/* L180		- 6 - Section Slider		    */
+/* L281		- 7 - Section Part-Infos    */
+/* L309		- 8 - Section Map           */
+/* L376		- 9 - Footer        			  */
+/* L409		- 10 - Media Queries 1			*/
+/* L464 	- 11 - Media Queries 2		  */
+/* L481 	- 12 - Media Queries 3 			*/
+/* L498 	- 13 - Media Queries 4 			*/
+/* L601 	- 13 - Media Queries 5 			*/
+/* L610 	- 13 - Media Queries 6 			*/
+/* --------------------------------------*/
+/* ==              BASE                  */
+/*-------------------------------------- */
+
+/*---------------------------------------*/
+/*==			      COLOR CODES	HEX			     */
+/*---------------------------------------*/
+/* 	Texte = 		
+    Black             #000000
+    White             #FFFFFF
+    Casal(green)      #2C655A
+    Tulipier(yellow)  #E7B23E
+    Toscane(red)      #BC4E2A
+      
+
+	  Background =
+    
+    White	            #FFFFFF
+    Casal(green)      #2C655A
+    Tulipier(yellow)  #E7B23E
+    Toscane(red)      #BC4E2A
+
+/* -------------------------------------- */
+/* == 		  DÉFINITIONS DES POLICES		   	*/
+/*----------------------------------------*/
+
+@font-face {
+  font-family: 'Cookie Regular';
+  src: url(../webfontkit/cookie/Cookie-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---------------------------------------- */
+/* ==             VERSION                   */
+/*              MOBILE FIRST                */
+/*---------------------------------------- */
+
+/* ---------------------------------------- */
+/* == 		ÉLÉMENTS PRINCIPAUX			      	 */
+/*---------------------------------------- */
+
+/*              BODY                  */
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cookie Regular', cursive;
+}
+
+/* ----------------------------------------*/
+/* == 		         CLASS		         	     */
+/*---------------------------------------- */
+/* ==           Class Colors               */
+.bck-tulipier {
+  background-color: #E7B23E;
+}
+
+.bck-casal {
+  background-color: #2C655A;
+}
+
+.bck-toscane {
+  background-color: #BC4E2A;
+}
+
+.color-tulipier {
+  color: #E7B23E;
+}
+
+.color-casal {
+  color: #2C655A;
+}
+
+.color-toscane {
+  color: #BC4E2A;
+}
+
+.color-white {
+  color: white;
+}
+
+/* ==           Font-Size               */
+.font-size40 {
+  font-size: 40px;
+}
+
+.font-size34 {
+  font-size: 34px;
+}
+
+.font-size24 {
+  font-size: 24px;
+}
+
+.font-size20 {
+  font-size: 20px;
+}
+
+.font-size18 {
+  font-size: 18px;
+}
+
+.font-size16 {
+  font-size: 16px;
+}
+
+
+/*==                                      */
+
+.width100 {
+  width: 100%;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.none {
+  display: none;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+
+/* ---------------------------------------- */
+/* ==             HEADER                   */
+/*---------------------------------------- */
+header {
+  height: 100px;
+}
+
+#logo {
+  width: 75px;
+}
+
+#logo img {
+  height: auto;
+}
+
+#title {
+  width: 95px;
+}
+
+
+/* ---------------------------------------- */
+/* ==              SECTION Slider           */
+/*---------------------------------------- */
+.part-slider {
+  height: 340px;
+  background-image: url("../images/autumn-studio-partie1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.part-text {
+  padding-top: 20px;
+}
+
+.part-text p {
+  width: 220px;
+  border-width: 5px 5px;
+  border-radius: 50%;
+  padding: 10px 10px;
+}
+
+/* ==         SLIDER          */
+
+#slider {
+  width: 80%;
+  height: 150px;
+  padding-top: 20px;
+}
+
+.slide-picture {
+  opacity: 0;
+}
+
+.slide-active {
+  opacity: 1;
+}
+
+.first-picture,
+.second-picture,
+.third-picture,
+.fourth-picture,
+.last-picture {
+  height: 140px;
+  transition: 0.5s;
+  overflow: hidden;
+  border-radius: 10px 100px / 120px;
+  flex-direction: row;
+}
+
+.first-picture img,
+.second-picture img,
+.third-picture img,
+.fourth-picture img,
+.last-picture img {
+  width: 60%;
+  float: left;
+}
+
+.first-picture p,
+.second-picture p,
+.third-picture p,
+.fourth-picture p,
+.last-picture p {
+  width: 40%;
+  height: 140px;
+  margin: 0;
+  padding-top: 40px;
+}
+
+
+/* ==       Button-slider     */
+
+.button-slider {
+  justify-content: space-around;
+  align-items: center;
+  width: 95px;
+  margin-top: 15px;
+}
+
+#play,
+#previous,
+#next {
+  cursor: pointer;
+}
+
+#previous {
+  right: 200px;
+  padding-right: 60px;
+}
+
+#next {
+  left: 200px;
+  padding-left: 60px;
+}
+
+#slider:hover #previous,
+#slider:hover #next {
+  opacity: 1;
+}
+
+
+/* ---------------------------------------- */
+/* ==          Section Part-Infos          */
+/*---------------------------------------- */
+.part-infos {
+  height: 250px;
+  border: 3px solid #E7B23E;
+}
+
+.part-infos h2 {
+  text-decoration: underline;
+  margin: 10px;
+}
+
+.part-infos ul {
+  padding-left: 20%;
+}
+
+.part-infos ul li {
+  width: 100%;
+  height: 45px;
+  font-size: 18px;
+}
+
+.part-infos li img {
+  width: 40px;
+  height: auto;
+}
+
+/* ---------------------------------------- */
+/* ==              SECtion MAP             */
+/*---------------------------------------- */
+
+/*== Part-Map   */
+.part-map {
+  height: 500px;
+}
+
+/*==    Map     */
+
+#mapid {
+  height: 400px;
+  width: 80%;
+  top: 50px;
+}
+
+/* == formulaire    */
+#form {
+  opacity: 0;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+#button {
+  border-color: darkred;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 10px;
+}
+
+
+/**==   Canvas     */
+
+#canvas-form {
+  opacity: 0;
+}
+
+#canvas {
+  width: 250px;
+  height: 150px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+
+#buttons-canvas {
+  /**none =>permet de cacher les boutons si le canvas est vide*/
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+#submit,
+#retry {
+  padding: 10px 10px;
+  border-color: darkred;
+  font-weight: bold;
+}
+
+/**== Timer **/
+
+#timer {
+  opacity: 0;
+}
+
+/* --------------------------------------- */
+/* ==              FOOTER                  */
+/*---------------------------------------- */
+footer {
+  border: 3px solid #E7B23E;
+  margin-top: 20px;
+}
+
+footer h2 {
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+ul {
+  padding-left: 0px;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+
+/* ---------------------------------------- */
+/* ==               MEDIAS                  */
+/*                  QUERIES                 */
+/*---------------------------------------- */
+
+/* ---------------------------------------- */
+/* ==              MEDIA 1                 */
+/*---------------------------------------- */
+@media screen and (min-width: 470px) {
+
+  /* ---------------------------------------- */
+  /* ==              SECTION Slider           */
+  /*---------------------------------------- */
+  .part-slider {
+    height: 500px;
+  }
+
+  .part-text {
+    padding-top: 40px;
+  }
+
+  #slider {
+    height: 50%;
+    padding-top: 40px;
+  }
+
+  .first-picture,
+  .second-picture,
+  .third-picture,
+  .fourth-picture,
+  .last-picture {
+    width: 100%;
+    height: 80%;
+  }
+
+  .first-picture p,
+  .second-picture p,
+  .fourth-picture p,
+  .third-picture p,
+  .last-picture p {
+    height: 100%;
+    font-size: 26px;
+    padding-top: 18%;
+  }
+
+  .second-picture p,
+  .fourth-picture p {
+    padding-top: 12%;
+  }
+
+
+  /* --------------------------------------- */
+  /* ==        Section Part-Infos            */
+  /*---------------------------------------- */
+
+  .part-infos ul {
+    padding-left: 30%;
+  }
+}
+
+  /* ---------------------------------------- */
+  /* ==              MEDIA 2                 */
+  /*---------------------------------------- */
+  @media screen and (min-width: 575px) {
+
+    .first-picture p,
+    .third-picture p,
+    .last-picture p {
+      padding-top: 15%;
+    }
+
+    .second-picture p,
+    .fourth-picture p {
+      padding-top: 10%;
+    }
+  }
+
+  /* ---------------------------------------- */
+  /* ==              MEDIA 3                 */
+  /*---------------------------------------- */
+  @media screen and (min-width: 695px) {
+
+    .first-picture p,
+    .third-picture p,
+    .last-picture p {
+      padding-top: 12%;
+    }
+
+    .second-picture p,
+    .fourth-picture p {
+      padding-top: 8%;
+    }
+  }
+
+  /* ---------------------------------------- */
+  /* ==              MEDIA 4                 */
+  /*---------------------------------------- */
+  @media screen and (min-width: 768px) {
+
+    /* ==             HEADER                   */
+    header {
+      height: 150px;
+    }
+
+    #logo {
+      width: 115px;
+    }
+
+    #logo img {
+      height: auto;
+    }
+
+    #title {
+      width: 120px;
+      font-size: 28px;
+    }
+
+    /* ==              SECTION Slider           */
+    .part-slider {
+      height: 600px;
+    }
+
+    .part-text p {
+      width: 250px;
+      font-size: 35px;
+    }
+
+    /* ==         SLIDER          */
+    .first-picture p,
+    .second-picture p,
+    .third-picture p,
+    .fourth-picture p,
+    .last-picture p {
+      font-size: 36px;
+    }
+
+    /* ==       Button-slider     */
+    #play,
+    #break,
+    #previous,
+    #next {
+      font-size: 50px;
+    }
+
+    /* ==          Section Part-Infos          */
+    .part-infos {
+      height: 300px;
+    }
+
+    .part-infos h2 {
+      font-size: 35px;
+    }
+
+    .part-infos ul {
+      padding-left: 35%;
+    }
+
+    .part-infos ul li {
+      font-size: 25px;
+    }
+
+    /*==   Canvas     */
+    #buttons-canvas {
+      justify-content: center;
+    }
+
+    #submit {
+      margin-right: 70px;
+    }
+
+    /* ==              FOOTER                  */
+    footer {
+      height: 180px;
+    }
+
+    footer h2 {
+      height: 30px;
+      font-size: 26px;
+    }
+
+    ul {
+      height: 65px;
+    }
+
+    li {
+      height: 25px;
+    }
+
+    li a {
+      font-size: 24px;
+    }
+
+    footer p {
+      font-size: 20px;
+    }
+  }
+/* 
+  /* ---------------------------------------- */
+  /* ==              MEDIA 5                 */
+  /*---------------------------------------- */
+  @media screen and (min-width: 900px) {
+    .part-slider {
+      height: 700px;
+    }
+  }
+
+  /* ---------------------------------------- */
+  /* ==              MEDIA 6                 */
+  /*---------------------------------------- */
+  @media screen and (min-width: 1150px) {
+    .part-slider {
+      height: 900px;
+    }
+
+    .part-text {
+      padding-top: 80px;
+    }
+
+    #slider {
+      padding-top: 80px;
+    }
+
+    .first-picture p,
+    .second-picture p,
+    .fourth-picture p,
+    .third-picture p,
+    .last-picture p {
+      font-size: 50px;
+    }
+
+    .part-infos ul {
+      padding-left: 40%;
+    }
+  }
+
+ 

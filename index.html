@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Roues Libres</title>
+    <!--<meta name="description" content="Votre site sur mesure et correspondant à votre budget ! Choisir la WebAgency c'est choisir une équipe d'experts passionnés, entièrement dévouée à la réalisation de votre projet."> Meta Description -->
+
+    <!-- Twitter Card data -->
+    <!--    <meta name="twitter:card" content="summary">
+        
+         Open Graph data -->
+    <!--    <meta property="og:title" content="La WebAgency"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="http://aurelie-nunes.fr/"/>
+        <meta property="og:image" content="http://aurelie-nunes.fr/images/slider/bg1.jpg"/>
+        <meta property="og:description" content="Votre site sur mesure et correspondant à votre budget ! "/> -->
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/7953791b7d.js" crossorigin="anonymous"></script>
+
+    <!--Feuille CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!--CSS Leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
+</head>
+
+<body>
+    <!----------- Header (logo + title) --------------------->
+    <header class="width100 bck-tulipier flex">
+
+        <div id="logo" class="margin-auto">
+            <img class="width100" src="./assets/images/logo.PNG">
+        </div>
+
+        <div id="title" class="margin-auto color-casal font-size20">
+            Cliquez ! <i class="fas fa-mouse color-toscane"></i><br>
+            Réservez ! <i class="fas fa-calendar-check color-toscane"></i><br>
+            Roulez ! <i class="fas fa-biking color-toscane"></i>
+        </div>
+
+    </header>
+    <!------------------- End Header -------------------------->
+
+
+    <!--------------------- Part Slider ----------------------->
+    <div class="part-slider">
+        <!-- Part Text -->
+        <div class="part-text">
+            <p class="margin-auto bck-casal color-tulipier font-size24 text-align-center">Comment ça marche ?</p>
+        </div>
+        <!-- Slider -->
+        <div id="slider" class="margin-auto relative">
+
+            <figure class="slide-picture  slide-active first-picture margin-auto flex absolute">
+                <img src="./assets/images/slider1.jpg" alt="réservation de vélo">
+                <p class="bck-tulipier color-casal font-size16 text-align-center">Réservez<br>votre vélo<br>en quelques clics
+                </p>
+            </figure>
+
+            <figure class="slide-picture second-picture margin-auto flex absolute">
+                <img src="./assets/images/slider2.PNG" alt="Choix de la station">
+                <p class="bck-tulipier color-casal font-size16 text-align-center">Choisissez <br>votre<br> station<br>
+                <a class="color-casal" href="#anchor">Infos<br></a></p>  
+            </figure>
+
+            <figure class="slide-picture third-picture margin-auto flex absolute">
+                <img src="./assets/images/slider3.PNG" alt="Remplissez les informations">
+                <p class="bck-tulipier color-casal font-size16 text-align-center">Remplissez<br>le<br>formulaire</p>
+            </figure>
+
+            <figure class="slide-picture fourth-picture margin-auto flex absolute">
+                <img src="./assets/images/slider4.jpg" alt="Sablier">
+                <p class="bck-tulipier color-casal font-size16 text-align-center">Votre vélo<br>vous attends<br>20 minutes<br>à la station choisie</p>
+            </figure>
+
+            <figure class="slide-picture last-picture margin-auto flex absolute">
+                <img src="./assets/images/slider5.jpg" alt="C'est parti">
+                <p class="bck-tulipier color-casal font-size16 text-align-center">Et c'est parti !<br> <i class="fas fa-bicycle color-toscane"></i></p> 
+            </figure>
+        </div>
+    
+        <!--Button Slider -->
+        <div class="button-slider flex margin-auto">
+            <div id="previous" class="color-toscane font-size34" onclick="slider.changeSlidePrevious()">
+                <i class="fas fa-chevron-circle-left"></i>
+            </div>
+
+            <div id="play" class="color-toscane font-size40">
+                <i class="fas fa-play-circle"></i>
+            </div>
+
+            <div id="break" class="color-toscane font-size40">
+                <i class="fas fa-pause-circle"></i>
+            </div>
+
+            <div id="next" class="color-toscane font-size34" onclick="slider.changeSlideNext()">
+                <i class="fas fa-chevron-circle-right"></i>
+            </div>
+        </div>
+    </div>
+    <!------------------- End Part Slider ----------------------->
+
+
+    <!------------------- Part Infos Station--------------------->
+    <div id="anchor" class="part-infos">
+            <h2 class="text-align-center">Infos Station</h2> 
+
+            <ul>
+            <li><img src="./assets/images/marker_red.png" alt="marqueur rouge">Station fermée</li>
+            <li><img src="./assets/images/marker_green.png" alt="Marqueur Vert">Vélos et Places disponibles</li>
+            <li><img src="./assets/images/marker_blue.png" alt="Marqueur bleu">Vélos disponibles 0 Places libres</li>
+            <li><img src="./assets/images/marker_orange.png" alt="Marqueur orange">Places libres 0 vélos disponibles</li>
+        </ul>
+    </div>
+    <!------------------- End Part Infos Station----------------->
+
+
+    <!------------------------- Part Map ----------------------->
+    <div class="part-map width100 bck-tulipier">
+
+        <div id="mapid" class="margin-auto">
+        </div>
+    </div>
+    <!------------------------- End Part Map ----------------------->
+
+
+    <!------------------------- Part Form -------------------------->
+    <div class="part-form">
+        <form id='form' class="none">
+            <div>
+                <input type="text" id="name" placeholder="Nom" required>
+            </div>
+            <div>
+                <input type="text" id="surname" placeholder="Prénom" required>
+            </div>
+            <div>
+                <input type="submit" id="button" class="bck-toscane color-white" value="Signature">
+            </div>
+        </form>
+    </div>
+    <!------------------------- End Part Form ------------------------->
+
+
+    <!------------------------- Part Canvas  -------------------------->
+    <div id="canvas-form" class="width100 none">
+        <canvas id="canvas" class="margin-auto"></canvas>
+
+       <!--Button Canvas -->
+        <div id="buttons-canvas" class="width100 none">
+            <button type="submit" id="submit" class="bck-toscane color-white">Valider</button>
+            <button type="submit" id="retry" class="bck-toscane color-white">Recommencer</button>
+        </div>
+    </div>
+    <!------------------------- End Part Canvas ------------------------>
+
+
+    <!--------------------------  Part Timer  -------------------------->
+    <div id="timer" class="none">
+        <p class="width100 font-size18 text-align-center"><span id="dispo-time" class="font-size18"></span><br> à la station
+            : <span id="station-name" class="font-size18"></span><br> par <span id="name-reservation"></span> <span
+                id="surname-reservation"></span></p>
+    </div>
+    <!------------------------- End Part Timer ------------------------->
+
+
+    <!--------------------------    Footer     -------------------------->
+    <footer class="text-align-center">
+        <h2 class="color-casal font-size16">Liens Utiles</h2>
+        <ul>
+            <li><a href="https://www.toulouse.fr/">Mairie de Toulouse</a></li>
+            <li><a href="https://www.toulouse-tourisme.com/">Toulouse Tourisme</a></li>
+            <li><a href="https://www.tourisme-occitanie.com/villes/toulouse">Tourisme Occitanie</a></li>
+        </ul>
+
+        <p>
+            Ce site est fictif. Il s'agit d'un projet pour OpenClassrooms.
+        </p>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <script src="./assets/js/slider.js"></script>
+    <script src="./assets/js/map.js"></script>
+    <script src="./assets/js/form.js"></script>
+    <script src="./assets/js/canvas.js"></script>
+    <script src="./assets/js/countdown.js"></script>
+</body>
+
+</html>
